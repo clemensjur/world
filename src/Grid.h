@@ -7,12 +7,14 @@
 
 
 #include <vector>
+#include <string>
 
 class Grid {
 private:
     int width;
     int height;
     std::vector<std::vector<bool>> tiles;
+    std::string front_buffer = "\033[2J\033[0;0H";
 public:
     Grid(int width, int height);
 
@@ -22,11 +24,15 @@ public:
 
     [[nodiscard]] const std::vector<std::vector<bool>> &getTiles() const;
 
-    void render() const;
+    [[nodiscard]] const std::string &getFrontBuffer() const;
+
+    void render();
 
     void randomize();
 
     void conwaysGoL();
+
+    void setFrontBuffer(const std::string &frontBuffer);
 };
 
 

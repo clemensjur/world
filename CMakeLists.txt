@@ -3,4 +3,4 @@ project(world)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(world main.cpp TileType.h Entity.cc Entity.h GridRandomizer.cc GridRandomizer.h perlin_noise.h GridRenderer.cc GridRenderer.h Grid.cc Grid.h ConwaysGoL.cc ConwaysGoL.h)
+add_executable(world src/main.cpp src/TileType.h src/Entity.cc src/Entity.h src/GridRandomizer.cc src/GridRandomizer.h src/perlin_noise.h src/GridRenderer.cc src/GridRenderer.h src/Grid.cc src/Grid.h src/ConwaysGoL.cc src/ConwaysGoL.h)

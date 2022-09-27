@@ -10,7 +10,7 @@
 
 class GridRenderer {
 public:
-    static void render_grid(std::vector<std::vector<bool>> grid);
+    static void render_grid(Grid *grid);
 };
 
 

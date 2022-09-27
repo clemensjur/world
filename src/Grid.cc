@@ -13,8 +13,8 @@ Grid::Grid(int width, int height) : width(width), height(height) {
     this->tiles = GridRandomizer::randomize_grid(this->width, this->height);
 }
 
-void Grid::render() const {
-    GridRenderer::render_grid(this->tiles);
+void Grid::render() {
+    GridRenderer::render_grid(this);
 }
 
 void Grid::randomize() {
@@ -35,4 +35,12 @@ int Grid::getHeight() const {
 
 const std::vector<std::vector<bool>> &Grid::getTiles() const {
     return tiles;
+}
+
+const std::string &Grid::getFrontBuffer() const {
+    return front_buffer;
+}
+
+void Grid::setFrontBuffer(const std::string &frontBuffer) {
+    front_buffer = frontBuffer;
 }
