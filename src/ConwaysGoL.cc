@@ -25,8 +25,13 @@ int ConwaysGoL::count_neighbors(int x, int y, const std::vector<std::vector<bool
     int alive_neighbors = 0;
     for (int i = y-1; i <= y+1; i++) {
         for (int j = x-1; j <= x+1; j++) {
-            if ((i==y && j==x) || i < 0 || i > grid.size()-1 || j < 0 || j > grid[0].size()-1) continue;
-            if (grid[i][j]) alive_neighbors++;
+            int sim_x = j, sim_y = i;
+            if (sim_y == y && sim_x == x) continue;
+            if (sim_y == -1) sim_y = grid.size()-1;
+            if (sim_y == grid.size()) sim_y = 0;
+            if (sim_x == -1) sim_x = grid[0].size()-1;
+            if (sim_x == grid[0].size()) sim_x = 0;
+            if (grid[sim_y][sim_x]) alive_neighbors++;
         }
     }
     return alive_neighbors;

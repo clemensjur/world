@@ -11,6 +11,8 @@
 class GridRenderer {
 public:
     static void render_grid(Grid *grid);
+
+    static std::string build_back_buffer(Grid *grid);
 };
 
 
